@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
 	entry: path.join(__dirname, "src", "common", "index.js"),
 	// tell webpack where to build to
 	output: {
-		filename: 'index.js',
+		filename: 'index.[contenthash].js',
 		path: path.join(__dirname, "dist"),
 	},
 	module: {
@@ -26,8 +27,11 @@ module.exports = {
 				}
 			},
 			{ // tells webpack to use style-loader and css-loader for all css files
-				test: /\.css$/i,
-        		use: ["style-loader", "css-loader"]
+				test: /\.css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					'css-loader',
+				]
 			},
 			{ // tells webpack to use file-loader for all image files
 				test: /\.(png|jp(e*)g|gif)$/,
@@ -46,6 +50,9 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
 			filename: 'index.html',
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'index.[contenthash].css',
 		})
 	]
 }
