@@ -1,14 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import ROUTES from './routes/routes';
+import { NavLink, Outlet } from "react-router-dom";
 
 import './styles/styles.css';
 
 export default function App() {
 	return (<>
-		<h1>Hello, World!</h1>
-
-		<Router>
+		<header>
 			<nav className="navigation">
 				<ul>
 				<li>
@@ -28,7 +25,13 @@ export default function App() {
 				</li>
 				</ul>
 			</nav>
-		</Router>
-		</>
-	);	  
+		</header>
+		
+		<main>
+			<h1>Hello, World!</h1>
+			<Outlet />
+		</main>
+
+		<footer></footer>
+	</>);	  
 }
