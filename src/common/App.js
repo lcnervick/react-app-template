@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import ROUTES from './routes/routes';
 
+import './styles/styles.css';
+
 export default function App() {
 	return (<>
 		<h1>Hello, World!</h1>
