@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 import './styles/styles.css';
+import './styles/animations.css';
+import './styles/custom-elements.css';
 
 export default function App() {
 	return (<>
@@ -26,7 +28,7 @@ export default function App() {
 				</ul>
 			</nav>
 		</header>
-		
+
 		<main>
 			<h1>Hello, World!</h1>
 			<Outlet />
