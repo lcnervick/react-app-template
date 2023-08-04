@@ -126,6 +126,9 @@
       "jsx-a11y/no-noninteractive-element-interactions": "off",
 
       "no-unused-vars": "warn",
+      "no-empty": "warn",
+      "comma-spacing": "warn",
+      "semi": "warn",
 
       "react/jsx-uses-react": "error",
       "react/jsx-uses-vars": "error"
