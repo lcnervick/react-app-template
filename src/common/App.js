@@ -1,27 +1,29 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import ROUTES from './routes/routes';
 
 import './styles/styles.css';
 import './styles/animations.css';
 import './styles/custom-elements.css';
 
 export default function App() {
-	return (<>
+	return (
+	<>
 		<header>
 			<nav className="navigation">
 				<ul>
 				<li>
-					<NavLink to={ROUTES.books()}>
+					<NavLink to={ROUTES.books}>
 					Books
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to={ROUTES.movies()}>
+					<NavLink to={ROUTES.movies}>
 					Movies
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to={ROUTES.songs()}>
+					<NavLink to={ROUTES.songs}>
 					Songs
 					</NavLink>
 				</li>
@@ -35,5 +37,6 @@ export default function App() {
 		</main>
 
 		<footer></footer>
-	</>);	  
+	</>
+	);	  
 }

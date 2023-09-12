@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 
 module.exports = {
 	// tell webpack to include a separate source-map file (inline-source-map) includes source map at end of js files
@@ -61,6 +62,8 @@ module.exports = {
 		}),
 		// tells webpack to clean up the old build files
 		new CleanWebpackPlugin(),
+		// clears the terminal before rebuilding
+		new CleanTerminalPlugin(),
 		// tells webpack to copy files from the images and fonts directory to the dist folder
 		new CopyWebpackPlugin({
 			patterns: [
