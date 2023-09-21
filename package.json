@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
-    "build-dev": "webpack --mode-development",
+    "build-dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js src/**/*.jsx"
   },
